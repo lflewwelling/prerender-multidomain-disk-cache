@@ -1,28 +1,32 @@
-prerender-file-cache
-====================
+# prerender-file-cache
+
 Prerender plugin for caching in file system, to be used with the prerender node application from https://github.com/prerender/prerender.
 
-#How it works
+## How it works
 
 This plugin will store all prerendered pages into a filesystem hierarchy.
-For example: 
+For example:
 
-url http://domain.lo/?_escaped_fragment_=/en/about - will be saved in CACHE_ROOT_DIR/en/about/___  
-url http://domain.lo/?_escaped_fragment_=/en/main/path/blah - will be saved in CACHE_ROOT_DIR/en/main/path/blah/___
+url http://domain.lo/?_escaped_fragment_=/en/about - will be saved in `CACHE_ROOT_DIR/en/about/___`
+url http://domain.lo/?_escaped_fragment_=/en/main/path/blah - will be saved in `CACHE_ROOT_DIR/en/main/path/blah/___`
 
 and etc
 
-#How to use
+## How to use
 
 In your local prerender project run:
 
-$ npm install prerender-file-cache --save
-Then in the server.js that initializes the prerender:
+`$ npm install prerender-file-cache --save`
 
-server.use(require('prerender-file-cache'));
+Then in the `server.js` that initializes the prerender:
 
-##Configuration
+`server.use(require('prerender-file-cache'));`
 
+## Configuration
+
+Export some env variables:
+
+```
 export CACHE_ROOT_DIR=/you/directory/for/cache  
 export CACHE_LIVE_TIME=10000 (in seconds)
-
+```
