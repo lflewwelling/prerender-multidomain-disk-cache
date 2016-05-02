@@ -1,1 +1,1 @@
-module.exports = require('./lib/fileSystemCache');
+module.exports = require('./lib/file-system-cache');
