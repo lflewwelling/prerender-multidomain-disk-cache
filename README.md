@@ -1,4 +1,4 @@
-# prerender-filesystem-cache
+# prerender-filesystem-cache [![Build Status](https://api.travis-ci.org/matthesrieke/prerender-filesystem-cache.svg)](https://travis-ci.org/matthesrieke/prerender-filesystem-cache)
 
 This is a plugin for [prerender(.io)](https://github.com/prerender/prerender)
 providing caching in the file system.
