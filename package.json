@@ -4,7 +4,8 @@
   "description": "prerender.io plugin for caching in file system (based on https://github.com/suhanovv/prerender-file-cache)",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test"
+    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/.bin/_mocha",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
   },
   "repository": {
     "type": "git",
@@ -17,15 +18,17 @@
   ],
   "dependencies": {
     "node-fs": ">= 0.1.7",
+    "cache-manager": "^2.0.1",
     "sanitize-filename": "^1.6.0"
   },
   "author": "Matthes Rieke",
   "license": "BSD-3-Clause",
   "readmeFilename": "README.md",
   "devDependencies": {
+    "coveralls": "^2.11.9",
+    "istanbul": "^0.4.3",
     "mocha": "^2.4.5",
     "node-uuid": "^1.4.7",
-    "cache-manager": "^2.0.1",
     "should": "^8.3.1",
     "unit.js": "^2.0.0"
   }
