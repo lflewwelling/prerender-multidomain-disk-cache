@@ -25,7 +25,7 @@ in `CACHE_ROOT_DIR/en/main/path/blah/perender.cache.html`
 
 In your local prerender project run:
 
-`$ npm install prerender-filefilesystem-cache --save`
+`$ npm install prerender-filesystem-cache --save`
 
 Then in the `server.js` that initializes the prerender:
 
