@@ -6,6 +6,8 @@ This plugin is a fork of https://github.com/suhanovv/prerender-file-cache,
 focussing on improved URI parsing, platform-independency and providing test
 coverage.
 
+Requires node >= 0.11.
+
 ## How it works
 
 This plugin will store all prerendered pages into a filesystem hierarchy.
