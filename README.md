@@ -3,7 +3,7 @@
 ## Status
 
 [![Build Status](https://api.travis-ci.org/matthesrieke/prerender-filesystem-cache.svg)](https://travis-ci.org/matthesrieke/prerender-filesystem-cache)
-[![Coverage Status](https://coveralls.io/repos/matthesrieke/prerender-filesystem-cache/badge.svg?branch=master)](https://coveralls.io/r/matthesrieke/prerender-filesystem-cache?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/matthesrieke/prerender-filesystem-cache/badge.svg?branch=master)](https://coveralls.io/github/matthesrieke/prerender-filesystem-cache?branch=master)
 
 This is a plugin for [prerender(.io)](https://github.com/prerender/prerender)
 providing caching in the file system.
