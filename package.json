@@ -16,7 +16,6 @@
     "cache"
   ],
   "dependencies": {
-    "cache-manager": "^2.0.1",
     "node-fs": ">= 0.1.7",
     "sanitize-filename": "^1.6.0"
   },
@@ -26,6 +25,7 @@
   "devDependencies": {
     "mocha": "^2.4.5",
     "node-uuid": "^1.4.7",
+    "cache-manager": "^2.0.1",
     "should": "^8.3.1",
     "unit.js": "^2.0.0"
   }
