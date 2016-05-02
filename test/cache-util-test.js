@@ -1,17 +1,27 @@
 var test = require('unit.js');
+var fs = require('node-fs');
 var fsCache = require('../lib/file-system-cache');
 var cacheUtils = require('../lib/cache-utils');
 var uuid = require('node-uuid');
 var pathTool = require('path');
 
-describe('fileSystemCacheTest', function() {
-  it('load', function() {
-    fsCache.should.be.an.Object;
-    fsCache.afterPhantomRequest.should.be.a.Function;
-    fsCache.beforePhantomRequest.should.be.a.Function;
-    fsCache.init.should.be.a.Function;
+var endsWith = function(str, exp) {
+  if (str.endsWith) {
+    return str.endsWith(exp);
+  }
+  else {
+    return str.match(exp+"$")==exp;
+  }
+}
 
+describe('cacheUtilsTest', function() {
+  it('load', function() {
     cacheUtils.should.be.an.Object;
+    cacheUtils.getCachePath.should.be.a.Function;
+    cacheUtils.fileSystemCache.should.be.an.Object;
+    cacheUtils.resolvePath.should.be.a.Function;
+    cacheUtils.writeCacheFile.should.be.a.Function;
+    cacheUtils.readCacheFile.should.be.a.Function;
   });
 
   it('testReadWrite', function(done) {
@@ -40,8 +50,32 @@ describe('fileSystemCacheTest', function() {
         done();
       });
     });
+  });
 
+  it('testWriteOnExistingDir', function(done) {
+    var testRes = uuid.v1();
+    var testUrl = 'http://localhost/'+testRes;
 
+    var targetDir = pathTool.join(cacheUtils.getCachePath(), testRes);
+    fs.mkdirSync(targetDir, '0777',true);
+
+    var writeData = '<html/>';
+    var readData;
+    //write
+    cacheUtils.writeCacheFile(testUrl, writeData, function(err) {
+      if (err) {
+        done(err);
+      }
+
+      //read
+      cacheUtils.readCacheFile(testUrl, function(err, data) {
+        readData = new String(data);
+        readData.should.be.equal(writeData);
+
+        //call done, as the async part is now finished
+        done();
+      });
+    });
   });
 
   it('testUrlPatterns', function() {
@@ -61,7 +95,7 @@ describe('fileSystemCacheTest', function() {
     //base dir test
     target = cacheUtils.resolvePath('http://localhost');
 
-    if (target.path.endsWith('/')) {
+    if (endsWith(target.path, '/')) {
       target.path = target.path.substring(0, target.path.length - 1);
     }
     target.path.should.be.equal(cacheUtils.getCachePath());
