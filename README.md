@@ -8,7 +8,7 @@ coverage.
 
 Version `2.0.0` has been tested to work with `prerender` version `5.4.x`.
 
-Requires node >= 0.11.
+Requires node >= 4.0
 
 ## Status
 
