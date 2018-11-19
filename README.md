@@ -1,17 +1,19 @@
 # prerender-filesystem-cache [![Build Status](https://api.travis-ci.org/matthesrieke/prerender-filesystem-cache.svg)](https://travis-ci.org/matthesrieke/prerender-filesystem-cache)
 
+This is a plugin for [prerender(.io)](https://github.com/prerender/prerender)
+providing caching in the file system.
+It is a fork of https://github.com/suhanovv/prerender-file-cache,
+focussing on improved URI parsing, platform-independency and providing test
+coverage.
+
+Version `2.0.0` has been tested to work with `prerender` version `5.4.x`.
+
+Requires node >= 0.11.
+
 ## Status
 
 [![Build Status](https://api.travis-ci.org/matthesrieke/prerender-filesystem-cache.svg)](https://travis-ci.org/matthesrieke/prerender-filesystem-cache)
 [![Coverage Status](https://coveralls.io/repos/github/matthesrieke/prerender-filesystem-cache/badge.svg?branch=master)](https://coveralls.io/github/matthesrieke/prerender-filesystem-cache?branch=master)
-
-This is a plugin for [prerender(.io)](https://github.com/prerender/prerender)
-providing caching in the file system.
-This plugin is a fork of https://github.com/suhanovv/prerender-file-cache,
-focussing on improved URI parsing, platform-independency and providing test
-coverage.
-
-Requires node >= 0.11.
 
 ## How it works
 
@@ -30,11 +32,11 @@ in `CACHE_ROOT_DIR/en/main/path/blah/perender.cache.html`
 
 ## How to use
 
-In your local prerender project run:
+The package is [available on npm](https://www.npmjs.com/package/prerender-filesystem-cache). Thus, in your local prerender project simply run:
 
 `$ npm install prerender-filesystem-cache --save`
 
-Then in the `server.js` that initializes the prerender:
+Then in the `server.js` that initializes prerender:
 
 `server.use(require('prerender-filesystem-cache'));`
 
