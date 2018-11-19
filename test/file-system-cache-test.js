@@ -7,8 +7,8 @@ var pathTool = require('path');
 describe('fileSystemCacheTest', function() {
   it('load', function() {
     fsCache.should.be.an.Object;
-    fsCache.afterPhantomRequest.should.be.a.Function;
-    fsCache.beforePhantomRequest.should.be.a.Function;
+    fsCache.beforeSend.should.be.a.Function;
+    fsCache.requestReceived.should.be.a.Function;
     fsCache.init.should.be.a.Function;
   });
 
@@ -22,7 +22,7 @@ describe('fileSystemCacheTest', function() {
       }
     }
 
-    fsCache.beforePhantomRequest({'method': 'POST'}, skipNonGetRes, function() {
+    fsCache.requestReceived({'method': 'POST'}, skipNonGetRes, function() {
     });
     skipNonGet.should.be.ok;
   });
@@ -54,7 +54,7 @@ describe('fileSystemCacheTest', function() {
       }
 
       //call the method
-      fsCache.beforePhantomRequest(req, res, function() {});
+      fsCache.requestReceived(req, res, function() {});
 
     });
 
@@ -79,7 +79,7 @@ describe('fileSystemCacheTest', function() {
     }
 
     //call the method
-    fsCache.beforePhantomRequest(req, res, function() {});
+    fsCache.requestReceived(req, res, function() {});
 
     sendCalled.should.not.be.ok;
   });
@@ -99,7 +99,7 @@ describe('fileSystemCacheTest', function() {
 
     var nextCalled = false;
     //call the method
-    fsCache.afterPhantomRequest(req, res, function() {
+    fsCache.beforeSend(req, res, function() {
       nextCalled = true;
     });
 
@@ -121,7 +121,7 @@ describe('fileSystemCacheTest', function() {
 
     var nextCalled = false;
     //call the method
-    fsCache.afterPhantomRequest(req, res, function() {
+    fsCache.beforeSend(req, res, function() {
       nextCalled = true;
     });
 

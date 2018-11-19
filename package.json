@@ -17,17 +17,17 @@
     "cache"
   ],
   "dependencies": {
-    "node-fs": ">= 0.1.7",
-    "cache-manager": "^2.0.1",
+    "node-fs": "^0.1.7",
+    "cache-manager": "^2.6.0",
     "sanitize-filename": "^1.6.0"
   },
   "author": "Matthes Rieke",
   "license": "BSD-3-Clause",
   "readmeFilename": "README.md",
   "devDependencies": {
-    "coveralls": "^2.11.9",
+    "coveralls": "^3.0.2",
     "istanbul": "^0.4.3",
-    "mocha": "^2.4.5",
+    "mocha": "^5.2.0",
     "node-uuid": "^1.4.7",
     "should": "^8.3.1",
     "unit.js": "^2.0.0"
