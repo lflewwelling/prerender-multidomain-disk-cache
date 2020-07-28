@@ -8,6 +8,8 @@ Replaced unnecessary logs, cache only pages with 200 status.
 Requires 
  - node >= 4.0
  - prerender >= 5.0.0
+ 
+For prerender 4.x.x use https://www.npmjs.com/package/prerender-filesystem-cache
 
 ## How it works
 
