@@ -1,15 +1,11 @@
 {
-  "name": "prerender-filesystem-cache",
+  "name": "prerender-disk-cache",
   "version": "2.0.0",
-  "description": "prerender.io plugin for caching in file system (based on https://github.com/suhanovv/prerender-file-cache)",
+  "description": "prerender.io plugin for caching in file system (based on https://github.com/matthesrieke/prerender-filesystem-cache)",
   "main": "index.js",
-  "scripts": {
-    "test": "./node_modules/istanbul/lib/cli.js cover ./node_modules/.bin/_mocha",
-    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls"
-  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/matthesrieke/prerender-filesystem-cache.git"
+    "url": "https://github.com/legalnavigator/prerender-disk-cache"
   },
   "keywords": [
     "prerender",
@@ -21,15 +17,7 @@
     "cache-manager": "^2.6.0",
     "sanitize-filename": "^1.6.0"
   },
-  "author": "Matthes Rieke",
+  "author": "Legal Navigator",
   "license": "BSD-3-Clause",
-  "readmeFilename": "README.md",
-  "devDependencies": {
-    "coveralls": "^3.0.2",
-    "istanbul": "^0.4.3",
-    "mocha": "^5.2.0",
-    "node-uuid": "^1.4.7",
-    "should": "^8.3.1",
-    "unit.js": "^2.0.0"
-  }
+  "readmeFilename": "README.md"
 }

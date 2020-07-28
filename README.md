@@ -1,19 +1,13 @@
-# prerender-filesystem-cache [![Build Status](https://api.travis-ci.org/matthesrieke/prerender-filesystem-cache.svg)](https://travis-ci.org/matthesrieke/prerender-filesystem-cache)
+# prerender-disk-cache
 
-This is a plugin for [prerender(.io)](https://github.com/prerender/prerender)
-providing caching in the file system.
-It is a fork of https://github.com/suhanovv/prerender-file-cache,
-focussing on improved URI parsing, platform-independency and providing test
-coverage.
+This is a plugin for [prerender.io](https://github.com/prerender/prerender)
+providing caching on disk.
+It is a fork of https://github.com/matthesrieke/prerender-filesystem-cache. 
+Replaced unnecessary logs, cache only pages with 200 status. 
 
-Version `2.0.0` has been tested to work with `prerender` version `5.4.x`.
-
-Requires node >= 4.0
-
-## Status
-
-[![Build Status](https://api.travis-ci.org/matthesrieke/prerender-filesystem-cache.svg)](https://travis-ci.org/matthesrieke/prerender-filesystem-cache)
-[![Coverage Status](https://coveralls.io/repos/github/matthesrieke/prerender-filesystem-cache/badge.svg?branch=master)](https://coveralls.io/github/matthesrieke/prerender-filesystem-cache?branch=master)
+Requires 
+ - node >= 4.0
+ - prerender >= 5.0.0
 
 ## How it works
 
@@ -32,13 +26,13 @@ in `CACHE_ROOT_DIR/en/main/path/blah/perender.cache.html`
 
 ## How to use
 
-The package is [available on npm](https://www.npmjs.com/package/prerender-filesystem-cache). Thus, in your local prerender project simply run:
+The package is [available on npm](https://www.npmjs.com/package/prerender-disk-cache). Thus, in your local prerender project simply run:
 
-`$ npm install prerender-filesystem-cache --save`
+`$ npm install prerender-disk-cache --save`
 
 Then in the `server.js` that initializes prerender:
 
-`server.use(require('prerender-filesystem-cache'));`
+`server.use(require('prerender-disk-cache'));`
 
 ## Configuration
 
@@ -50,4 +44,4 @@ export CACHE_LIVE_TIME=10000 (in seconds)
 ```
 
 * `CACHE_ROOT_DIR` defaults to `os.tmpdir()/prerender-cache`
-* `CACHE_LIVE_TIME` defaults to 3600 (1 hour)
+* `CACHE_LIVE_TIME` defaults to `3600` (1 hour)
