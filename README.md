@@ -5,11 +5,11 @@ providing caching on disk.
 It is a fork of https://github.com/matthesrieke/prerender-filesystem-cache. 
 Replaced unnecessary logs, cache only pages with 200 status. 
 
-Requires 
+####Requires:
  - node >= 4.0
  - prerender >= 5.0.0
  
-For prerender 4.x.x use https://www.npmjs.com/package/prerender-filesystem-cache
+For prerender 4.x.x use [prerender-filesystem-cache](https://github.com/matthesrieke/prerender-filesystem-cache).
 
 ## How it works
 
