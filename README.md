@@ -2,28 +2,26 @@
 
 This is a plugin for [prerender.io](https://github.com/prerender/prerender)
 providing caching on disk.
-It is a fork of https://github.com/matthesrieke/prerender-filesystem-cache. 
-Replaced unnecessary logs, cache only pages with 200 status. 
+It is a fork of legalnavigator/prerender-disk-cache which only works for a single domain/subdomain.
+
 
 Requires:
  - node >= 4.0
  - prerender >= 5.0.0
  
-For prerender 4.x.x use [prerender-filesystem-cache](https://github.com/matthesrieke/prerender-filesystem-cache).
-
 ## How it works
 
 This plugin will store all prerendered pages into a filesystem hierarchy.
 For example:
 
-* url http://domain.lo/?_escaped_fragment_=/en/about - will be saved in
-`CACHE_ROOT_DIR/en/about/perender.cache.html`
-* url http://domain.lo/en/about?_escaped_fragment_= - will be saved in
-`CACHE_ROOT_DIR/en/about/perender.cache.html`
-* url http://domain.lo/?_escaped_fragment_=/en/main/path/blah - will be saved
-in `CACHE_ROOT_DIR/en/main/path/blah/perender.cache.html`
-* url http://domain.lo/en/main/path/blah?_escaped_fragment_= - will be saved
-in `CACHE_ROOT_DIR/en/main/path/blah/perender.cache.html`
+* url http://domain.com/?_escaped_fragment_=/en/about - will be saved in
+`CACHE_ROOT_DIR/domain.com/en/about/perender.cache.html`
+* url http://domain.como/en/about?_escaped_fragment_= - will be saved in
+`CACHE_ROOT_DIR/domain.com/en/about/perender.cache.html`
+* url http://domain.com/?_escaped_fragment_=/en/main/path/blah - will be saved
+in `CACHE_ROOT_DIR/domain.com/en/main/path/blah/perender.cache.html`
+* url http://domain.com/en/main/path/blah?_escaped_fragment_= - will be saved
+in `CACHE_ROOT_DIR/domain.com/en/main/path/blah/perender.cache.html`
 
 
 ## How to use
