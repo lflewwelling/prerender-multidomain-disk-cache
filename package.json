@@ -1,11 +1,11 @@
 {
-  "name": "prerender-disk-cache",
+  "name": "prerender-multidomain-disk-cache",
   "version": "2.0.0",
-  "description": "prerender.io plugin for caching in file system (based on https://github.com/matthesrieke/prerender-filesystem-cache)",
+  "description": "prerender.io plugin for caching in file system (based on https://github.com/legalnavigator/prerender-disk-cache)",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/legalnavigator/prerender-disk-cache"
+    "url": "https://github.com/lflewwelling/prerender-multidomain-disk-cache"
   },
   "keywords": [
     "prerender",
@@ -17,7 +17,7 @@
     "cache-manager": "^2.6.0",
     "sanitize-filename": "^1.6.0"
   },
-  "author": "Legal Navigator",
+  "author": "Larry Flewwelling",
   "license": "BSD-3-Clause",
   "readmeFilename": "README.md"
 }
