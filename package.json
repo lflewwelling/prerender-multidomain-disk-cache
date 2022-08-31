@@ -1,6 +1,6 @@
 {
   "name": "prerender-multidomain-disk-cache",
-  "version": "2.0.0",
+  "version": "2.0.2",
   "description": "prerender.io plugin for caching in file system (based on https://github.com/legalnavigator/prerender-disk-cache)",
   "main": "index.js",
   "repository": {
